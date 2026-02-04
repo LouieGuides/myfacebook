@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { CommunityHeader } from "@/app/components/community-header";
-import { CreatePostModal } from "@/app/components/create-post-modal";
 import { HighlightRow } from "@/app/components/highlight-row";
 import { PostCard } from "@/app/components/post-card";
 import { PostCardSkeleton } from "@/app/components/skeletons";
@@ -31,7 +30,6 @@ export function CommunityFeed({
   mode: Mode;
 }) {
   const [posts, setPosts] = useState<Post[]>(initialPosts);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState<SortOption>("Latest");
   const [activeTab, setActiveTab] = useState("Posts");
@@ -76,7 +74,6 @@ export function CommunityFeed({
     };
 
     setPosts((prev) => [newPost, ...prev]);
-    setIsModalOpen(false);
 
     setTimeout(() => {
       setPosts((prev) =>
@@ -118,7 +115,9 @@ export function CommunityFeed({
         community={community}
         mode={mode}
         activeTab={activeTab}
+        activeTag={selectedTag}
         onTabChange={setActiveTab}
+        onCreatePost={handleCreatePost}
       />
 
       {activeTab === "Posts" ? (
@@ -303,20 +302,6 @@ export function CommunityFeed({
         </section>
       ) : null}
 
-      <button
-        type="button"
-        onClick={() => setIsModalOpen(true)}
-        disabled={isLoading}
-        className="fixed bottom-8 right-8 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 active:scale-95 disabled:pointer-events-none disabled:opacity-60"
-      >
-        + Create Post
-      </button>
-
-      <CreatePostModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleCreatePost}
-      />
     </div>
   );
 }

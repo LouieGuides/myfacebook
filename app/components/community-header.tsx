@@ -1,5 +1,6 @@
 "use client";
 
+import { PostComposer } from "@/app/components/post-composer";
 import { modeCopy, type Community, type Mode } from "@/app/lib/mock-data";
 import { cx } from "@/app/lib/utils";
 
@@ -7,12 +8,16 @@ export function CommunityHeader({
   community,
   mode,
   activeTab,
+  activeTag,
   onTabChange,
+  onCreatePost,
 }: {
   community: Community;
   mode: Mode;
   activeTab: string;
+  activeTag: string;
   onTabChange: (tab: string) => void;
+  onCreatePost: (content: string) => void;
 }) {
   const tabs = [
     "Posts",
@@ -66,6 +71,14 @@ export function CommunityHeader({
               Join community
             </button>
           </div>
+        </div>
+
+        <div className="mt-6">
+          <PostComposer
+            onSubmit={onCreatePost}
+            placeholder={`Share something with ${community.name}...`}
+            activeTag={activeTag}
+          />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">

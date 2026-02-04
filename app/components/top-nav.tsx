@@ -5,7 +5,7 @@ import { ModePillToggle } from "@/app/components/mode-pill-toggle";
 export function TopNav() {
   return (
     <header className="sticky top-0 z-20 w-full border-b border-slate-200/70 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-4">
+      <div className="mx-auto flex w-full max-w-[120rem] items-center justify-between gap-4 px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-slate-700 to-slate-500 text-sm font-semibold text-white shadow-lg">
             mf
