@@ -15,9 +15,9 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "myFacebookai | Community Demo",
+  title: "myFacebookai | Initial Concept Demo",
   description:
-    "A clickable demo for local and niche community experiences, powered by mock data.",
+    "A clickable demo for local and niche community experiences, powered by Louie Guides.",
 };
 
 export default function RootLayout({

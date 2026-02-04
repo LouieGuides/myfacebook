@@ -116,7 +116,7 @@ export function PostCard({
     <div
       className={cx(
         "group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md",
-        post.isNew ? "animate-[fade-up_600ms_ease-out]" : ""
+        post.isNew ? "animate-[slide-in_450ms_ease-out]" : ""
       )}
     >
       <div className="flex items-start gap-4">
@@ -173,7 +173,7 @@ export function PostCard({
                 liked
                   ? "border-slate-900 bg-slate-900 text-white"
                   : "border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50",
-                likePulse ? "animate-[pop_200ms_ease-out]" : ""
+                likePulse ? "animate-[like-bounce_250ms_ease-out]" : ""
               )}
             >
               <IconLike />

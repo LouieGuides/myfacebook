@@ -7,7 +7,7 @@ export function CommunityCard({ community }: { community: Community }) {
   return (
     <Link
       href={`/communities/${community.slug}`}
-      className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md"
+      className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_18px_40px_rgba(99,102,241,0.25)] hover:ring-1 hover:ring-indigo-200/60"
     >
       <div className={cx("h-16 bg-gradient-to-br", community.banner)} />
       <div className="flex flex-1 flex-col justify-between p-5">
